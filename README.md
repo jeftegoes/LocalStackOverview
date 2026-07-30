@@ -36,4 +36,13 @@ localstack:
 
 ## 4.1. Test
 
-- aws --endpoint-url=http://localhost:4566 s3 ls
+- S3
+  - aws s3 ls --endpoint-url=http://localhost:4566
+- SQS
+  - aws sqs list-queues --endpoint-url=http://localhost:4566
+  - aws sqs create-queue --queue-name user-queue --endpoint-url http://localhost:4566
+  - aws sqs receive-message --queue-url http://sqs.sa-east-1.localhost.localstack.cloud:4566/000000000000/user-queue --endpoint-url=http://localhost:4566 
+- SNS
+  - aws sns list-topics --endpoint-url=http://localhost:4566
+  - aws sns create-topic --name user-topic --endpoint-url=http://localhost:4566 
+  - aws sns get-topic-attributes --topic-arn arn:aws:sns:sa-east-1:000000000000:user-topic

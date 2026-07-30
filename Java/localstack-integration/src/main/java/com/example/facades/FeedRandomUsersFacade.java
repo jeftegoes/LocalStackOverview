@@ -5,10 +5,10 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FeedRandomUsers {
+public class FeedRandomUsersFacade {
     private final RandomUserService randomUserService;
 
-    public FeedRandomUsers(RandomUserService randomUserService) {
+    public FeedRandomUsersFacade(RandomUserService randomUserService) {
         this.randomUserService = randomUserService;
     }
 
